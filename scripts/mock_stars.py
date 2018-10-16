@@ -16,7 +16,7 @@ def draw_from_mask(n, mask_map, nest=False):
     while n_points < n:
         # Draw points from sphere
         lon = np.random.random(n*mult) * 360.
-        lat = np.degrees(np.arccos(np.random.random(n*mult)*2. - 1.))
+        lat = np.degrees(np.arccos(np.random.random(n*mult)*2. - 1.)) - 90.
 
         # Check that points lie in mask
         pix_idx = hp.pixelfunc.ang2pix(nside, lon, lat, lonlat=True, nest=nest)
